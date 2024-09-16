@@ -1,0 +1,31 @@
+@if (config?.showCocina) {
+    <app-cocina></app-cocina>
+}
+
+
+
+
+@if(config?.showIngresarPedido){
+    <div class="container">
+
+    
+        <div class="d-flex justify-content-center my-3 py-2">
+            <button class="btn btn-primary" (click)="irCocina()">Ir a la cocina!</button>
+          </div>
+          
+    
+        <form #formPedido="ngForm" (ngSubmit)="guardarPedido(formPedido)">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" #controlnombre="ngModel">
+            </div>
+            <div class="mb-3">
+              <label for="pedido" class="form-label">Pedido</label>
+              <input type="text" class="form-control" id="pedido" name="pedido" [(ngModel)]="pedido" #controlpedido="ngModel">
+            </div>
+            <button type="submit" class="btn btn-primary">Ordenar</button>
+          </form>
+    
+    
+    </div>
+}

@@ -1,0 +1,37 @@
+
+@if(config?.showCocina){
+    <div class="container my-4">
+
+    
+        <!-- Pendiente de cocinar -->
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center mb-4">Pendiente de cocinar</h2>
+            <ul class="list-group">
+              <li *ngFor="let pedido of listPedidos" class="list-group-item d-flex justify-content-between align-items-center">
+                <span>{{pedido.number}} - {{pedido.description}}</span>
+                <button class="btn btn-primary" (click)="cocinarPedido(pedido)">Cocinar</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+    
+        <!-- Pedidos en cocción -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <h2 class="text-center mb-4">Pedidos en cocción</h2>
+            <ul class="list-group">
+              <li *ngFor="let ped of listPedidosEnCoccion" class="list-group-item d-flex justify-content-between align-items-center">
+                <span>{{ped.number}} - {{ped.description}}</span>
+                <button class="btn btn-success" (click)="pedidoTerminado(ped)">Pedido Terminado!</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+    
+      
+        
+      </div>
+}
+
+<app-pedidos-listos></app-pedidos-listos>

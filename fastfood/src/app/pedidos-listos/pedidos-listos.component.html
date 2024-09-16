@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>Pedidos listos para entregar</h2>
+    <ul>
+        <li *ngFor="let pedido of listPedidosListos">
+            {{pedido.number}} - {{pedido.name}} <button class="btn btn-primary" (click)="entregado()">Entregar!</button>
+        </li>
+    </ul>
+</div>
